@@ -1,12 +1,10 @@
 import React from "react";
-
-import { Outlet } from "react-router-dom"; // Import Outlet
-
-import Header from "../components/Header"; // Assuming you have a Header component
+import { Outlet } from "react-router-dom";
+import Header from "../components/Header";
 
 const MainLayout = () => {
   return (
-    <div>
+    <div className="w-screen h-screen text-black">
       <Header />
       <main>
         <Outlet />

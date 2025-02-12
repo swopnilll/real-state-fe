@@ -31,63 +31,59 @@ const Header = () => {
   return (
     <>
       <header className="w-full flex justify-between px-4 py-4">
-        <div className="w-[150px] h-[50px] overflow-hidden">
+        <div className="">
           <NavLink to="/">
             <img
-              className="w-full h-full object-fit"
+              className="w-[170px]  h-[50px]"
               src="/logo.png"
               alt="Company Logo"
             />
           </NavLink>
         </div>
 
-        <nav className="hidden md:block">
+        <nav className="hidden md:flex justify-between w-2/3">
           <ul className="flex space-x-3">
-            <li className="list-underline">
+            <li className="">
               <NavLink to="/property-search">Find a Property</NavLink>
             </li>
 
-            <li className="list-underline">
+            <li className="">
               <NavLink to="/agent-search">Find Agents</NavLink>
             </li>
-            <li className="list-underline">
+            <li className="l">
               <NavLink to="/news">News</NavLink>
             </li>
-            <li className="list-underline">
+            <li className="">
               <NavLink to="/commercial">Commercial</NavLink>
             </li>
-
-            {/* User Drop Down */}
-
-            <div className="relative">
-              <button
-                onClick={toggleUserDropdown}
-                className="focus:outline-none"
-              >
-                <UserCircle className="size-6 text-black cursor-pointer" />
-              </button>
-
-              {isUserDropDownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-50">
-                  <NavLink
-                    to="/sign-in"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                    onClick={toggleUserDropdown}
-                  >
-                    Sign In
-                  </NavLink>
-
-                  <NavLink
-                    to="/sign-up"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                    onClick={toggleUserDropdown}
-                  >
-                    Sign Up
-                  </NavLink>
-                </div>
-              )}
-            </div>
           </ul>
+
+          {/* User Drop Down */}
+          <div className="relative mr-7">
+            <button onClick={toggleUserDropdown} className="focus:outline-none">
+              <UserCircle className="size-6 text-black cursor-pointer" />
+            </button>
+
+            {isUserDropDownOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-50">
+                <NavLink
+                  to="/sign-in"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={toggleUserDropdown}
+                >
+                  Sign In
+                </NavLink>
+
+                <NavLink
+                  to="/sign-up"
+                  className="block px-4 py-2 hover:bg-gray-100"
+                  onClick={toggleUserDropdown}
+                >
+                  Sign Up
+                </NavLink>
+              </div>
+            )}
+          </div>
         </nav>
 
         <button
