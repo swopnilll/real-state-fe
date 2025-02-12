@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-
 import { NavLink, useNavigate } from "react-router-dom";
 
+import { MenuIcon, XIcon, UserCircle } from "lucide-react";
 import { useViewportSize } from "@mantine/hooks";
-import { MenuIcon, XIcon } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const [isUserDropDownOpen, setIsUserDropdownOpen] = useState(false);
+
   const { width } = useViewportSize();
+
   const isMobile = width < 768; // below md breakpoint
 
   const toggleMenu = () => {
@@ -21,15 +24,21 @@ const Header = () => {
     });
   };
 
+  const toggleUserDropdown = () => {
+    setIsUserDropdownOpen((prev) => !prev);
+  };
+
   return (
     <>
       <header className="w-full flex justify-between px-4 py-4">
         <div className="w-[150px] h-[50px] overflow-hidden">
-          <img
-            className="w-full h-full object-fit"
-            src="/logo.png"
-            alt="Company Logo"
-          />
+          <NavLink to="/">
+            <img
+              className="w-full h-full object-fit"
+              src="/logo.png"
+              alt="Company Logo"
+            />
+          </NavLink>
         </div>
 
         <nav className="hidden md:block">
@@ -48,12 +57,36 @@ const Header = () => {
               <NavLink to="/commercial">Commercial</NavLink>
             </li>
 
-            <li className="list-underline">
-              <NavLink to="/sign-in">Sign In</NavLink>
-            </li>
-            <li className="list-underline">
-              <NavLink to="/sign-up">Sign Up</NavLink>
-            </li>
+            {/* User Drop Down */}
+
+            <div className="relative">
+              <button
+                onClick={toggleUserDropdown}
+                className="focus:outline-none"
+              >
+                <UserCircle className="size-6 text-black cursor-pointer" />
+              </button>
+
+              {isUserDropDownOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg py-2 z-50">
+                  <NavLink
+                    to="/sign-in"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={toggleUserDropdown}
+                  >
+                    Sign In
+                  </NavLink>
+
+                  <NavLink
+                    to="/sign-up"
+                    className="block px-4 py-2 hover:bg-gray-100"
+                    onClick={toggleUserDropdown}
+                  >
+                    Sign Up
+                  </NavLink>
+                </div>
+              )}
+            </div>
           </ul>
         </nav>
 

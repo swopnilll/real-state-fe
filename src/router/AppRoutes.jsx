@@ -1,14 +1,15 @@
 import React from "react";
+
 import { Routes, Route } from "react-router-dom";
+
 import Home from "../Home";
-import PropertySearchPage from "../pages/PropertySearchPage";
-import AgentSearchPage from "../pages/AgentSearchPage";
+import SignUp from "../pages/SignUp";
+import SignIn from "../pages/SignIn";
 import NewsPage from "../pages/NewsPage";
 import Commercial from "../pages/Commercial";
 import MainLayout from "../layouts/MainLayout";
-
-import SignUp from "../pages/SignUp";
-import SignIn from "../pages/SignUp";
+import AgentSearchPage from "../pages/AgentSearchPage";
+import PropertySearchPage from "../pages/PropertySearchPage";
 
 const AppRoutes = () => {
   return (
