@@ -9,6 +9,12 @@ const MainLayout = () => {
       <main>
         <Outlet />
       </main>
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white py-4">
+        <div className="container mx-auto px-4 text-center">
+          &copy; 2025 Nepali in Australia Real Estate. All rights reserved.
+        </div>
+      </footer>
     </div>
   );
 };
