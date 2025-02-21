@@ -56,6 +56,10 @@ const Header = () => {
             <li className="">
               <NavLink to="/commercial">Commercial</NavLink>
             </li>
+
+            <li className="">
+              <NavLink to="/search-bar-test">Search Bar</NavLink>
+            </li>
           </ul>
 
           {/* User Drop Down */}

@@ -1,5 +1,5 @@
 // App.jsx
-import React from "react";
+
 import AppRoutes from "./router/AppRoutes"; // Import the AppRoutes component
 
 function App() {

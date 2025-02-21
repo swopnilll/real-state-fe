@@ -10,6 +10,7 @@ import Commercial from "../pages/Commercial";
 import MainLayout from "../layouts/MainLayout";
 import AgentSearchPage from "../pages/AgentSearchPage";
 import PropertySearchPage from "../pages/PropertySearchPage";
+import AutoCompleteSearchBar from "../pages/AutoCompleteSearchBar";
 
 const AppRoutes = () => {
   return (
@@ -23,6 +24,8 @@ const AppRoutes = () => {
 
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+
+        <Route path="/search-bar-test" element={<AutoCompleteSearchBar />} />
       </Route>
     </Routes>
   );
